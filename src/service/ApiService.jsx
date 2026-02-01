@@ -1,5 +1,5 @@
 
-import api, { BACKEND_API, fileApi } from "./Axios";
+import {api, fileApi } from "./Axios";
 import { getToken } from "./UserService";
 
 

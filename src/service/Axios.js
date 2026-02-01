@@ -1,14 +1,13 @@
 import axios from "axios";
 
-export const BACKEND_API= import.meta.env.VITE_APP_API_URL;
 
 const api = axios.create({
 
-  baseURL: `${BACKEND_API}/api/v1`
+  baseURL: `${import.meta.env.VITE_APP_API_URL}/api/v1`
 });
 
 export const fileApi= axios.create({
-  baseURL: `${BACKEND_API}/api/files`
+  baseURL: `${import.meta.env.VITE_APP_API_URL}/api/v1/api/files`
 });
 
 export default api;

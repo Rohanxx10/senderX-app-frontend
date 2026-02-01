@@ -1,6 +1,6 @@
 import { Client } from "@stomp/stompjs";
 import SockJS from "sockjs-client";
-import { BACKEND_API } from "./Axios";
+
 
 var stompClient = null;
 var isWebSocketConnected = false;
@@ -25,7 +25,7 @@ export function connectToWebSocketAndReceiverMessages(
   }
   stompClient = new Client({
     webSocketFactory: () =>
-      new SockJS(`${BACKEND_API}/chat?token=${token}`),
+      new SockJS(`${import.meta.env.VITE_APP_API_URL}/chat?token=${token}`),
     debug: (str) => console.debug("STOMP: ", str),
 
     reconnectDelay: 0,

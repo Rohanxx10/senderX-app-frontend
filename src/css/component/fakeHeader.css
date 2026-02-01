@@ -1,0 +1,16 @@
+/* =========================
+   HEADER
+========================= */
+#fakeheader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+ 
+
+  background-color: #86efbc;
+  z-index: 100;
+ 
+ 
+}

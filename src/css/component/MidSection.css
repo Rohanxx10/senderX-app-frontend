@@ -1,0 +1,11 @@
+
+#container{
+    top: 0;
+    height: 80%;
+    width: 100%;
+    background: radial-gradient(circle, #86efac, transparent 70%);
+  
+  filter: blur(90px);
+  opacity: 0.6;
+  
+}

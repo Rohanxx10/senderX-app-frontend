@@ -1,0 +1,7 @@
+
+#hero {
+  position: relative;   /* 🔥 REQUIRED */
+  background-color: black;
+  height: 100%;
+  width: 100%;
+}

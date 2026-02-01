@@ -1,0 +1,205 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+  --green-main: #22c55e;
+  --green-soft: #dcfce7;
+  --green-light: #ecfdf5;
+  --green-dark: #15803d;
+  --text-dark: #064e3b;
+  --text-muted: #4b5563;
+}
+
+/* =========================
+   SECTION CONTAINER
+========================= */
+#work {
+  width: 100%;
+  padding: 90px 20px;
+  background: linear-gradient(135deg, var(--green-light), var(--green-soft));
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating gradient shapes */
+#work::before,
+#work::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+}
+
+#work::before {
+  background: #86efac;
+  top: -140px;
+  left: -140px;
+}
+
+#work::after {
+  background: #34d399;
+  bottom: -140px;
+  right: -140px;
+}
+
+/* =========================
+   TITLE
+========================= */
+.work-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 60px;
+  color: var(--text-dark);
+  letter-spacing: 0.6px;
+  position: relative;
+}
+
+/* Title underline accent */
+.work-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 14px auto 0;
+  background: linear-gradient(90deg, var(--green-main), var(--green-dark));
+  border-radius: 5px;
+}
+
+/* =========================
+   STEPS CONTAINER
+========================= */
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   STEP CARD
+========================= */
+.step-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  width: 300px;
+  padding: 35px 28px;
+  border-radius: 20px;
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  transition: all 0.4s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Gradient border effect */
+.step-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1.5px;
+  background: linear-gradient(135deg, var(--green-main), #86efac);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.4;
+}
+
+/* Hover magic */
+.step-card:hover {
+  transform: translateY(-18px) scale(1.04);
+  box-shadow: 0 35px 70px rgba(34, 197, 94, 0.35);
+}
+
+/* =========================
+   STEP NUMBER
+========================= */
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.55);
+}
+
+/* =========================
+   CARD TEXT
+========================= */
+.step-card h3 {
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.step-card p {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* =========================
+   SUBTLE HOVER INDICATOR
+========================= */
+.step-card:hover h3 {
+  color: var(--green-dark);
+}
+
+.step-card:hover .step-number {
+  transform: rotate(360deg);
+  transition: transform 0.6s ease;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+  .step-card {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-title {
+    font-size: 30px;
+  }
+
+  .step-card {
+    width: 90%;
+    max-width: 360px;
+  }
+}
+
+/* =========================
+   ENTRY ANIMATION
+========================= */
+.step-card {
+  animation: slideUp 0.8s ease both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

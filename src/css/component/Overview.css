@@ -1,0 +1,384 @@
+/* =========================
+   SECTION
+========================= */
+#overview {
+  padding: 120px 40px;
+  background: linear-gradient(135deg, #ecfdf5, #dcfce7);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.overview-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+.overview-left h2 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #064e3b;
+}
+
+.overview-left p {
+  margin-top: 16px;
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.overview-cards {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.info-card {
+  background: white;
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  font-size: 14px;
+}
+
+.info-card h4 {
+  margin: 6px 0;
+  color: #064e3b;
+}
+
+.info-card span {
+  color: #64748b;
+}
+
+/* =========================
+   RIGHT DEMO
+========================= */
+.demo-chat {
+  width: 320px;
+  height: 420px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+  overflow: hidden;
+  margin-left: auto;
+}
+
+/* header */
+.demo-header {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  background: #f1f5f9;
+  font-size: 13px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.green { background: #22c55e; }
+.yellow { background: #eab308; }
+.red { background: #ef4444; }
+
+/* body */
+.demo-body {
+  padding: 16px;
+}
+
+/* messages */
+.demo-msg {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  margin-bottom: 12px;
+  opacity: 0;
+}
+
+.left {
+  background: #f1f5f9;
+}
+
+.right {
+  background: #22c55e;
+  color: white;
+  margin-left: auto;
+}
+
+/* file */
+.file {
+  border: 1px dashed #22c55e;
+  background: #ecfdf5;
+}
+
+/* typing */
+.typing {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 12px;
+  opacity: 0;
+}
+
+.typing span {
+  width: 6px;
+  height: 6px;
+  background: #94a3b8;
+  border-radius: 50%;
+  animation: blink 1.4s infinite;
+}
+
+/* progress */
+.progress {
+  height: 4px;
+  background: #d1fae5;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #22c55e;
+  animation: progress 6s infinite;
+}
+
+/* =========================
+   LOOP TIMELINE (FIXED)
+========================= */
+.loop .m1 { animation: show 6s infinite 0s; }
+.loop .t1 { animation: typingShow 6s infinite 1s; }
+.loop .m2 { animation: show 6s infinite 2s; }
+.loop .m3 { animation: show 6s infinite 3s; }
+.loop .m4 { animation: show 6s infinite 4.2s; }
+
+/* =========================
+   KEYFRAMES
+========================= */
+@keyframes show {
+  0%, 15% { opacity: 0; }
+  20%, 100% { opacity: 1; }
+}
+
+@keyframes typingShow {
+  0%, 20% { opacity: 0; }
+  30%, 45% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes blink {
+  0%,100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes progress {
+  0% { width: 0; }
+  60% { width: 100%; }
+  100% { width: 100%; }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .overview-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .overview-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-chat {
+    margin: auto;
+  }
+}
+/* =========================
+   LEFT CARD ANIMATION
+========================= */
+.info-card {
+  background: white;
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  font-size: 14px;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: cardFade 8s infinite;
+}
+
+.c1 { animation-delay: 0s; }
+.c2 { animation-delay: 0.4s; }
+.c3 { animation-delay: 0.8s; }
+
+@keyframes cardFade {
+  0%, 10% { opacity: 0; transform: translateY(20px); }
+  15%, 80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+/* =========================
+   DEMO MESSAGES (RESET FIRST)
+========================= */
+.demo-msg {
+  opacity: 0;
+  margin-bottom: 12px;
+  font-size: 13px;
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 14px;
+}
+
+/* bubbles */
+.left { background: #f1f5f9; }
+.right { background: #22c55e; color: white; margin-left: auto; }
+
+.file {
+  background: #ecfdf5;
+  border: 1px dashed #22c55e;
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+.progress {
+  height: 4px;
+  background: #d1fae5;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 6px;
+  opacity: 0;
+  animation: progressWrapper 8s infinite;
+}
+
+
+.progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #22c55e;
+  animation: progressBar 8s infinite;
+}
+
+
+/* =========================
+   MESSAGE TIMELINE (FIXED)
+========================= */
+.loop .upload {
+  animation: showUpload 8s infinite;
+}
+
+.loop .sending {
+  animation: showSending 8s infinite;
+}
+
+.loop .file {
+  animation: showFile 8s infinite;
+}
+
+.loop .downloaded {
+  animation: showDownload 8s infinite;
+}
+
+/* =========================
+   KEYFRAMES (NO OVERLAP)
+========================= */
+/* @keyframes showUpload {
+  0%, 10% { opacity: 0; }
+  15%, 25% { opacity: 1; }
+  30%, 100% { opacity: 0; }
+}
+
+@keyframes showSending {
+  0%, 25% { opacity: 0; }
+  30%, 45% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes showFile {
+  0%, 45% { opacity: 0; }
+  50%, 65% { opacity: 1; }
+  70%, 100% { opacity: 0; }
+}
+
+@keyframes showDownload {
+  0%, 65% { opacity: 0; }
+  70%, 85% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes progressBar {
+  0%, 30% { width: 0; }
+  45% { width: 100%; }
+  100% { width: 100%; }
+} */
+
+@keyframes showUpload {
+  0%, 10% { opacity: 0; }
+  15%, 25% { opacity: 1; }
+  30%, 100% { opacity: 1; }
+}
+
+@keyframes showSending {
+  0%, 25% { opacity: 0; }
+  30%, 45% { opacity: 1; }
+  50%, 100% { opacity: 1; }
+}
+
+@keyframes showFile {
+  0%, 45% { opacity: 0; }
+  50%, 65% { opacity: 1; }
+  70%, 100% { opacity: 1; }
+}
+
+@keyframes showDownload {
+  0%, 65% { opacity: 0; }
+  70%, 85% { opacity: 1; }
+  90%, 100% { opacity: 1; }
+}
+
+@keyframes progressBar {
+  0%, 30% {
+    width: 0;
+  }
+
+  45% {
+    width: 100%;
+  }
+
+  45%, 85% {
+    width: 100%; /* stay filled */
+  }
+
+  100% {
+    width: 100%; /* still filled, reset happens invisibly */
+  }
+}
+@keyframes progressWrapper {
+  0%, 25% {
+    opacity: 0;
+  }
+
+  30%, 85% {
+    opacity: 1;
+  }
+
+  90%, 100% {
+    opacity: 1; /* hides before reset */
+  }
+}
+

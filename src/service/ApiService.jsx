@@ -1,5 +1,5 @@
 
-import api, { fileApi } from "./Axios";
+import api, { fileApi, url } from "./Axios";
 
 import { getToken } from "./UserService";
 
@@ -57,7 +57,7 @@ export function uploadFile(file,token){
 }
 
 export function isValidToken(){
-  console.log("api" ,BACKEND_API);
+  console.log("api" ,url);
    const token = localStorage.getItem("token");
    return api.post("/token-validation",token);
 

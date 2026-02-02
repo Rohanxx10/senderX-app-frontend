@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const export url="https://senderbackend-35quh1uz.b4a.run"
+ export const url="https://senderbackend-35quh1uz.b4a.run"
 const api = axios.create({
 
   baseURL: `${url}/api/v1`

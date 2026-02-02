@@ -3,7 +3,7 @@ import axios from "axios";
 
 const api = axios.create({
 
-  baseURL: `https://senderbackend-xadt9ah3.b4a.run/api/v1`
+  baseURL: `https://senderbackend-35quh1uz.b4a.run/api/v1`
 });
 
 export const fileApi= axios.create({

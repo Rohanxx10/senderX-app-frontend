@@ -3,7 +3,7 @@ import axios from "axios";
 
 const api = axios.create({
 
-  baseURL: `https://superdrop-xychcyn4.b4a.run/api/v1`
+  baseURL: `https://senderbackend-qkd3qokr.b4a.run/`
 });
 
 export const fileApi= axios.create({
